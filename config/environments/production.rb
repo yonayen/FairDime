@@ -71,10 +71,13 @@ FairdimeApp::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+#Required for Heroku -- devise
+#Note to set this to your actual host (www.fairpercent.com.. if this doesn't work go for fairpercent.heroku.com)
+   config.action_mailer.default_url_options = { host: 'fairpercent.heroku.com' }
 end
